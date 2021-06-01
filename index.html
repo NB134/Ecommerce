@@ -20,7 +20,7 @@
     <script src="shop/shop.controller.js" defer></script>
     <script src="register/register.controller.js" defer></script>
     <script src="login/login.controller.js" defer></script>
-    <script src="./categories/categories.controller.js" defer></script>
+    <script src="cart/cart.controller.js" defer></script>
     <script src="app.routes.js" defer></script>
 </head>
 <body ng-app="Ecom" ng-controller="main">
@@ -36,13 +36,12 @@
             <div class="navLinks">
                 <a href="#/!" ng-class="{ active: isActive('/')}">Home</a>
                 <a href="#!shop" ng-class="{ active: isActive('/shop')}">Shop</a>
-                <a href="#!categories" ng-class="{ active: isActive('/categories')}">Categories</a>
             </div>
             <div class="sideNavLinks">
-                <a href="#!login" ng-class="{ active: isActive('/login')}">Login</a>
-                <a href='#!register' ng-class="{ active: isActive('/register')}">Register</a>
-                <!-- <a>Log Out</a>
-                <a href='#!cart' ng-class="{ active: isActive('/cart')}">Cart</a> -->
+                <a href="#!login" ng-class="{ active: isActive('/login')}" ng-show="loggedOut()">Login</a>
+                <a href='#!register' ng-class="{ active: isActive('/register')}" ng-show="loggedOut()">Register</a>
+                <a href="#!cart" ng-class="{ active: isActive('/cart')}" ng-show="!loggedOut()">Cart</a>
+            <a ng-click="logOut()" ng-show="!loggedOut()">LogOut</a>
             </div>
         </div>
         <div class="toggleBtnContainer">

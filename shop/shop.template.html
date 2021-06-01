@@ -1,7 +1,25 @@
+<div>
+    <div class="filtersContainer">
+        <div>
+            <label>Category: </label>
+            <select name="category" id="category" ng-model="category">
+                <option value="{{x}}" ng-repeat="x in categories" ng-click="SelectCat()" >{{x}}</option>
+            </select>
+        </div>
+    <div>
+        <label>Sort By: </label>
+        <select ng-model="sort" name="sort" id="sort">
+            <option value="{{x}}" ng-repeat="x in sortBy" ng-click="order()" >{{x}}</option>
+        </select>
+    </div>
+</div>
 <div class="productsContainer">
-    <div ng-repeat="x in products" class="productCard">
+    <div ng-repeat="x in products | orderBy:'price':reverse " class="productCard">
         <img ng-src="{{x.image}}">
         <span>{{x.title}}</span>
         <h1>{{x.price | currency}}</h1>
+        <button ng-show="!loggedOut()" ng-click="addToCart(x.id)">Add to Cart</button>
     </div>
 </div>
+</div>
+

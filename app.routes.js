@@ -7,10 +7,6 @@ app.config(function($routeProvider){
         templateUrl:'./shop/shop.template.html',
         controller:'shopController'
     })
-    .when('/categories',{
-        templateUrl:'./categories/categories.template.html',
-        controller:'categories'
-    })
     .when('/register',{
         templateUrl:'./register/register.template.html',
         controller:'register'
@@ -18,6 +14,10 @@ app.config(function($routeProvider){
     .when('/login',{
         templateUrl:'./login/login.template.html',
         controller:'login'
+    })
+    .when('/cart',{
+        templateUrl:'./cart/cart.template.html',
+        controller:'cart'
     })
 
 

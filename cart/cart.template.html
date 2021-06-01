@@ -1,0 +1,8 @@
+<div class="productsContainer">
+    <div ng-repeat="x in products" class="productCard">
+        <img ng-src="{{x.image}}">
+        <span>{{x.title}}</span>
+        <h1>{{x.price | currency}}</h1>
+        <span>Quantity: {{x.quantity}}</span>
+    </div>
+</div>
